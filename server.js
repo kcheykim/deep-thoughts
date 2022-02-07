@@ -10,15 +10,15 @@ const startServer = async () => { //create a new Apollo server adn pass in our s
   const server = new ApolloServer({
     typeDefs, 
     resolvers,
-    context: authMiddleware
+    //context: authMiddleware 
   });
 
   await server.start(); //start the Apollo server
-  server.applyMiddleware({app}); //integrate our Apollo server with the Express application as middleware
+  server.applyMiddleware({ app }); //integrate our Apollo server with the Express application as middleware
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 
-startServer(); //initialize the Apollo server
+startServer() //initialize the Apollo server
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
