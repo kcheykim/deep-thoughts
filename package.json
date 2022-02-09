@@ -1,7 +1,6 @@
 {
   "name": "mern-server",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -17,9 +16,20 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "graphql": "^16.3.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.9"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcheykim/deep-thoughts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kcheykim/deep-thoughts/issues"
+  },
+  "homepage": "https://github.com/kcheykim/deep-thoughts#readme",
+  "description": ""
 }

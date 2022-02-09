@@ -1,7 +1,8 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express'); //import ApolloServer
-const { typeDefs, resolvers } = require('./schemas'); //import our typeDefs and resolvers
-const db = require('./config/connection');
+const { typeDefs, resolvers } = require('./server/schemas'); //import our typeDefs and resolvers
+const db = require('./server/config/connection');
+const { authMiddleware } = require('./server/utils/auth'); //import the authentication
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -10,7 +11,7 @@ const startServer = async () => { //create a new Apollo server adn pass in our s
   const server = new ApolloServer({
     typeDefs, 
     resolvers,
-    //context: authMiddleware 
+    context: authMiddleware
   });
 
   await server.start(); //start the Apollo server
