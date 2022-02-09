@@ -15,7 +15,6 @@ const startServer = async () => { //create a new Apollo server adn pass in our s
     resolvers,
     context: authMiddleware
   });
-
   await server.start(); //start the Apollo server
   server.applyMiddleware({ app }); //integrate our Apollo server with the Express application as middleware
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
